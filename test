@@ -1,0 +1,92 @@
+// README.md
+
+# Nansen Liquidity Tool Project
+
+This project consists of a Backend and Frontend to display token inflows and outflows in real-time using SSE and React.
+
+---
+
+## 1. Push the Project to GitHub
+
+1. Create a new repository on GitHub, for example: `nansen-liquidity-tool`.
+2. Open your terminal in the local project folder:
+
+```bash
+# Initialize Git
+git init
+
+# Add all files
+git add .
+
+# First commit
+git commit -m "Initial commit"
+
+# Link to your GitHub repository
+git remote add origin https://github.com/<username>/nansen-liquidity-tool.git
+
+# Push the files
+git branch -M main
+git push -u origin main
+```
+
+> Replace `<username>` with your GitHub username.
+
+---
+
+## 2. Set Up Render to Deploy the Site
+
+1. Sign up at [Render](https://render.com) and choose **New Web Service**.
+2. Connect your GitHub account and select the repository you created.
+3. Choose the `main` branch.
+4. Set **Root Directory** to `backend`.
+5. Set **Build Command**:
+
+```bash
+cd frontend && npm install && npm run build
+```
+
+6. Set **Start Command**:
+
+```bash
+cd backend && npm install && node server.js
+```
+
+7. Click **Create Web Service**.
+8. After a few minutes, Render will provide a direct link to test the site, such as:
+```
+https://your-service-name.onrender.com
+```
+
+---
+
+## 3. Run the Project Locally
+
+### Backend:
+```bash
+cd backend
+npm install
+node server.js
+```
+
+### Frontend:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Open your browser at:
+```
+http://localhost:3000
+```
+
+---
+
+## 4. Notes
+- The current API is a placeholder and should be replaced with the real Nansen API endpoint.
+- You can modify `fetchTokenFlows` to handle actual JSON data from Nansen.
+- SSE is used to automatically update the UI in real-time.
+
+---
+
+You now have a complete README ready to guide anyone in setting up and running the project locally or on Render.
+
