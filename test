@@ -13,7 +13,7 @@ This project consists of a Backend and Frontend to display token inflows and out
 
 ```bash
 # Initialize Git
-git init
+ git init
 
 # Add all files
 git add .
@@ -33,22 +33,26 @@ git push -u origin main
 
 ---
 
-## 2. Set Up Render to Deploy the Site
+## 2. Set Up Render to Deploy the Site (Corrected Root Directory)
 
 1. Sign up at [Render](https://render.com) and choose **New Web Service**.
 2. Connect your GitHub account and select the repository you created.
 3. Choose the `main` branch.
-4. Set **Root Directory** to `backend`.
+4. Set **Root Directory** to `/` (the project root that contains both `frontend` and `backend`). Do **not** set it to `/backend` because the package.json is in the root or inside each folder separately.
 5. Set **Build Command**:
 
 ```bash
+# Install frontend dependencies and build frontend
 cd frontend && npm install && npm run build
+
+# Install backend dependencies
+cd backend && npm install
 ```
 
 6. Set **Start Command**:
 
 ```bash
-cd backend && npm install && node server.js
+cd backend && node server.js
 ```
 
 7. Click **Create Web Service**.
@@ -56,6 +60,8 @@ cd backend && npm install && node server.js
 ```
 https://your-service-name.onrender.com
 ```
+
+> Ensure your Node version on Render matches your project (Node 20 recommended). Also, make sure both `frontend/package.json` and `backend/package.json` exist.
 
 ---
 
@@ -88,5 +94,5 @@ http://localhost:3000
 
 ---
 
-You now have a complete README ready to guide anyone in setting up and running the project locally or on Render.
+This README now ensures the correct Root Directory and package.json locations for successful deployment on Render.
 
